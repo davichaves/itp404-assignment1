@@ -10,7 +10,14 @@ var reviews = [
 
 
 function classifyReviewsByCost(reviews) {
-  // your implementation
+  return reviews.reduce(function(review, key) {
+    if (review[key.cost]) {
+      review[key.cost] += 1;
+    } else {
+      review[key.cost] = 1
+    }
+    return review;
+  }, {});
 }
 
 console.log(classifyReviewsByCost(reviews));
