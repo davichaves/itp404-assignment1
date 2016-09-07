@@ -1,0 +1,65 @@
+<script>
+
+var reviewsData = {
+  data: [
+    {
+      id: 1,
+      attributes: {
+        'review-title': 'Terrible!',
+        'stars': 1,
+        'cost': 'high'
+      }
+    },
+    {
+      id: 2,
+      attributes: {
+        'review-title': 'Decent place',
+        'stars': 3,
+        'cost': 'average'
+      }
+    },
+    {
+      id: 3,
+      attributes: {
+        'review-title': 'I would come again',
+        'stars': 3.5,
+        'cost': 'average'
+      }
+    },
+    {
+      id: 4,
+      attributes: {
+        'review-title': 'So good, and cheap!',
+        'stars': 4,
+        'cost': 'low-average'
+      }
+    },
+    {
+      id: 5,
+      attributes: {
+        'review-title': 'Good, but pricey!',
+        'stars': 4,
+        'cost': 'high'
+      }
+    }
+  ]
+};
+
+function extractReviews(reviewData) {
+  return reviewData.data.map(function(object) {
+    var rObj = {};
+    rObj["id"] =  object.id;
+    rObj["title"] = object.attributes['review-title']
+    rObj["stars"] = object.attributes['stars']
+    rObj["cost"] = object.attributes['cost']
+    return rObj;
+  });
+}
+
+console.log(extractReviews(reviewsData));
+
+</script>
+
+
+
+
